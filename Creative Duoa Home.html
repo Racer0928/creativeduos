@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Duos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Landing Section -->
+  <div id="landing" class="landing">
+    <img src="logo.jpg" alt="Creative Duos Logo" class="logo" />
+    <p class="tagline">Two Creatives. One Vision.</p>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+    </div>
+  </div>
+
+  <!-- Sticky Header -->
+  <header id="sticky-header">
+    <div class="header-left">
+      <img src="logo.jpg" alt="Logo" class="mini-logo" />
+      <span class="header-title">Creative Duos</span>
+    </div>
+    <div class="header-tagline">Two Creatives. One Vision.</div>
+    <nav class="header-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <h1>Two Creatives. One Vision.</h1>
+    <p>Edits, design, and visuals that break the algorithm at the lowest prices.</p>
+    <div class="hero-buttons">
+      <a href="#portfolio" class="btn">View Our Work</a>
+      <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- What We Do Section -->
+<section class="what-we-do" id="services-preview">
+  <h2>What We Do</h2>
+  <div class="services">
+    <div class="service-card">
+      <img src="video-icon.png" alt="Video Editing" />
+      <h3>Video Editing</h3>
+      <p>YouTube edits, reels, promos — sharp and smooth.</p>
+    </div>
+    <div class="service-card">
+      <img src="thumbnail-icon.png" alt="Thumbnail Design" />
+      <h3>Thumbnail Design</h3>
+      <p>Click-worthy thumbnails that break the algorithm.</p>
+    </div>
+    <div class="service-card">
+      <img src="poster-icon.png" alt="Posters & Banners" />
+      <h3>Posters & Banners</h3>
+      <p>Posters, banners & graphics for socials and events.</p>
+    </div>
+  </div>
+  <a href="#services" class="btn explore-btn">Explore Services</a>
+</section>
+
+<!-- Why Us Section -->
+<section class="why-us" id="why-us">
+  <h2>Why Choose Us?</h2>
+  <p class="tagline">Young minds. Sharp edits. Fresh perspective.</p>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <h3>⚡ Fast Turnaround</h3>
+      <p>We deliver quality edits quickly, without compromising on style.</p>
+    </div>
+    <div class="why-item">
+      <h3>💸 Budget-Friendly</h3>
+      <p>Top-tier visuals at prices made for creators and startups.</p>
+    </div>
+    <div class="why-item">
+      <h3>🎯 Custom-Made</h3>
+      <p>Every project is tailored to your brand and your audience.</p>
+    </div>
+  </div>
+
+  <!-- Optional Testimonial -->
+  <div class="testimonial">
+    <p>“Creative Duos totally transformed our content game. 10/10.”</p>
+    <span>- Happy Client</span>
+  </div>
+</section>
+
+<!-- Portfolio Preview Section -->
+<section class="portfolio-preview" id="portfolio">
+  <h2>Our Work</h2>
+  <p class="portfolio-subtext">A glimpse into what we create for creators.</p>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="thumb1.jpg" alt="Portfolio 1" onclick="openLightbox('thumb1.jpg')">
+    </div>    
+    <div class="portfolio-item">
+      <img src="thumb2.jpg" alt="Portfolio 1" onclick="openLightbox('thumb2.jpg')">
+    </div>    
+    <div class="portfolio-item">
+      <img src="thumb3.jpg" alt="Portfolio 3">
+    </div>
+    <div class="portfolio-item">
+      <img src="thumb4.jpg" alt="Portfolio 4">
+    </div>
+  </div>
+
+  <a href="#full-portfolio" class="btn explore-btn">View Full Portfolio</a>
+</section>
+
+
+  <!-- JavaScript -->
+  <script>
+    const landing = document.getElementById("landing");
+    const header = document.getElementById("sticky-header");
+    const heroSection = document.querySelector(".hero-section");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        landing.classList.add("hide");
+        header.classList.add("show");
+        heroSection.classList.add("show");
+      } else {
+        landing.classList.remove("hide");
+        header.classList.remove("show");
+        heroSection.classList.remove("show");
+      }
+    });
+
+    function openLightbox(src) {
+  const lightbox = document.getElementById("lightbox");
+  const img = document.getElementById("lightbox-img");
+  img.src = src;
+  lightbox.style.display = "flex";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+
+  </script>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-logo">
+      <h3>Creative Duos</h3>
+      <p>Built with hustle by two dreamers.</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://youtube.com/" target="_blank">YouTube</a>
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="mailto:creativeduos@gmail.com">Gmail</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Creative Duos. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Lightbox Popup -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="Preview">
+</div>
+
+
+</body>
+</html>
